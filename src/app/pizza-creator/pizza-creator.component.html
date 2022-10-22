@@ -1,0 +1,14 @@
+<div class="container">
+    <h3>Select Size</h3>
+</div>
+<ul>
+    <li *ngFor="let pizzaSize of pizzaSizes">
+        <a>
+            <img src="{{pizzaSize.ImageUrl}}" alt="food-images">
+            <div class="content">
+                <div class="name">{{pizzaSize.Name}}</div>
+                <div class="prize">{{pizzaSize.Prize}}$</div>
+            </div>
+        </a>
+    </li>
+</ul>

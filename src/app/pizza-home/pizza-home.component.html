@@ -1,0 +1,19 @@
+<ul>
+    <li *ngFor="let food of foods">
+        <a>
+            <img src="{{food.ImageUrl}}" alt="food-images">
+            <div class="content">
+                <div class="name">{{food.Name}}</div>
+                <div class="prize">{{food.Prize}}$</div>
+            </div>
+        </a>
+    </li>
+</ul>
+<footer>
+    <h2>
+        <button class="button" type="button" (click)="addPizza()">
+            <i class="fa fa-plus"></i>
+            Choose your pizzas
+        </button>
+    </h2>
+</footer>
