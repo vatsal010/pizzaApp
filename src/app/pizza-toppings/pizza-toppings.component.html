@@ -1,0 +1,28 @@
+<div class="container">
+    <h3>Select toppings</h3>
+</div>
+<ul>
+    <li *ngFor="let topping of toppings">
+        <a>
+            <img src="{{topping.ImageUrl}}" alt="food-images">
+            <div class="content">
+                <div class="name">{{topping.Name}}</div>
+                <div class="prize">{{topping.Prize}}$</div>
+            </div>
+        </a>
+    </li>
+</ul>
+<ul>
+    <li>
+        <button class="button" type="button" (click)="navigateToPreviousPage()">
+            <i class="fa fa-plus"></i>
+            < Back
+        </button>
+    </li>
+    <li>
+        <button class="button" type="button" (click)="placeorder()">
+            <i class="fa fa-plus"></i>
+            Place order!!
+        </button>
+    </li>
+</ul>

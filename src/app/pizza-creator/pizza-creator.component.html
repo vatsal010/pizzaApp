@@ -12,3 +12,47 @@
         </a>
     </li>
 </ul>
+<div class="container">
+    <h3>Select pizza sauces</h3>
+</div>
+<ul>
+    <li *ngFor="let pizzaSauce of pizzaSauces">
+        <a>
+            <img src="{{pizzaSauce.ImageUrl}}" alt="food-images">
+            <div class="content">
+                <div class="name">{{pizzaSauce.Name}}</div>
+                <div class="prize">{{pizzaSauce.Prize}}$</div>
+            </div>
+        </a>
+    </li>
+</ul>
+<div class="container">
+    <h3>Do you want extra cheese?</h3>
+</div>
+<ul>
+    <li>
+        <button class="button" type="button" (click)="extraCheese(true)">
+            <i class="fa fa-plus"></i>
+            Yes!!
+        </button>
+    </li>
+    <li>
+        <button class="button" type="button" (click)="extraCheese(false)">
+            <i class="fa fa-plus"></i>
+            No!!
+        </button>
+    </li>
+</ul>
+<ul>
+    <li>
+        <button class="button" type="button" (click)="navigateToPreviousPage()">
+            <i class="fa fa-plus"></i>
+            < Back </button>
+    </li>
+    <li>
+        <button class="button" type="button" (click)="navigateToToppings()">
+            <i class="fa fa-plus"></i>
+            Next >
+        </button>
+    </li>
+</ul>

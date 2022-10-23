@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PizzaHeaderComponent } from './pizza-header/pizza-header.component';
 import { PizzaHomeComponent } from './pizza-home/pizza-home.component';
 import { PizzaCreatorComponent } from './pizza-creator/pizza-creator.component';
+import { PizzaToppingsComponent } from './pizza-toppings/pizza-toppings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaHeaderComponent,
     PizzaHomeComponent,
-    PizzaCreatorComponent
+    PizzaCreatorComponent,
+    PizzaToppingsComponent
   ],
   imports: [
     BrowserModule,

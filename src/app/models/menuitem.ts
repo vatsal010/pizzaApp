@@ -1,4 +1,4 @@
-export class Food {
+export class MenuItem {
     public Id: number;
     public Prize: number;
     public Name: string;

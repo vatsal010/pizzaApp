@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Food } from '../models/food';
+import { MenuItem } from '../models/menuitem';
 import { PizzaFoodService } from '../services/pizza-food.service';
 
 @Component({
@@ -9,15 +9,15 @@ import { PizzaFoodService } from '../services/pizza-food.service';
   styleUrls: ['./pizza-home.component.css']
 })
 export class PizzaHomeComponent implements OnInit {
-  foods: Food[] = [];
+  foods: MenuItem[] = [];
 
   constructor(private foodService: PizzaFoodService, private router: Router) { }
 
   ngOnInit(): void {
-    this.foods = this.foodService.getAll();
+    this.foods = this.foodService.getDPizzaMenu();
   }
 
-  addPizza(): void {
+  createPizza(): void {
     this.router.navigateByUrl('/createpizza')
   }
 }
