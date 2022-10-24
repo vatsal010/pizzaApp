@@ -1,18 +1,18 @@
 export class MenuItem {
-    public Id: number;
-    public Prize: number;
-    public Name: string;
-    public Rating: number = 0;
-    public ImageUrl: string
+    public id: number;
+    public prize: number;
+    public name: string;
+    public rating: number = 0;
+    public imageUrl: string
 
     /**
      * Initilize food item
      */
     constructor(id: number, prize: number, name: string, rating: number, imageurl: string) {
-        this.Id = id;
-        this.Prize = prize;
-        this.Name = name;
-        this.Rating = rating;
-        this.ImageUrl = imageurl;
+        this.id = id;
+        this.prize = prize;
+        this.name = name;
+        this.rating = rating;
+        this.imageUrl = imageurl;
     }
 }

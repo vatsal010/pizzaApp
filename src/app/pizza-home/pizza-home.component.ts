@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from '../models/menuitem';
 import { PizzaFoodService } from '../services/pizza-food.service';
+import { Observable, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-pizza-home',
@@ -14,7 +15,10 @@ export class PizzaHomeComponent implements OnInit {
   constructor(private foodService: PizzaFoodService, private router: Router) { }
 
   ngOnInit(): void {
-    this.foods = this.foodService.getDPizzaMenu();
+    this.foodService.getDPizzaMenu()
+      .subscribe(resp => {
+        this.foods = resp;
+      });;
   }
 
   createPizza(): void {

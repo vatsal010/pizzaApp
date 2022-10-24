@@ -16,8 +16,12 @@ export class PizzaCreatorComponent implements OnInit {
   constructor(private pizzaService: PizzaFoodService, private router: Router) { }
 
   ngOnInit(): void {
-    this.pizzaSizes = this.pizzaService.getPizzaSize();
-    this.pizzaSauces = this.pizzaService.getPizzaSauces();
+    this.pizzaService.getPizzaSize().subscribe(resp => {
+      this.pizzaSizes = resp;
+    });
+    this.pizzaService.getPizzaSauces().subscribe(resp => {
+      this.pizzaSauces = resp;
+    });
   }
 
   extraCheese(isExtraCheeseAdded: boolean): void {

@@ -14,7 +14,10 @@ export class PizzaToppingsComponent implements OnInit {
   constructor(private foodService: PizzaFoodService, private router: Router) { }
 
   ngOnInit(): void {
-    this.toppings = this.foodService.getPizzaToppings();
+    this.foodService.getPizzaToppings().subscribe(resp => {
+      this.toppings = resp;
+    });;
+    ;
   }
 
   navigateToPreviousPage(): void {

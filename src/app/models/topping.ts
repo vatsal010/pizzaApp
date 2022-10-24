@@ -1,16 +1,16 @@
 export class Topping {
-    public Id: number;
-    public Prize: number;
-    public Name: string;
-    public ImageUrl: string
+    public id: number;
+    public prize: number;
+    public name: string;
+    public imageUrl: string
 
     /**
      * Initilize food item
      */
     constructor(id: number, prize: number, name: string, imageurl: string) {
-        this.Id = id;
-        this.Prize = prize;
-        this.Name = name;
-        this.ImageUrl = imageurl;
+        this.id = id;
+        this.prize = prize;
+        this.name = name;
+        this.imageUrl = imageurl;
     }
 }
