@@ -3,7 +3,7 @@
 </div>
 <ul>
     <li *ngFor="let pizzaSize of pizzaSizes">
-        <a>
+        <a (click)="this.selectPizzaSize(pizzaSize)">
             <img src="{{pizzaSize.imageUrl}}" alt="food-images">
             <div class="content">
                 <div class="name">{{pizzaSize.name}}</div>
@@ -17,7 +17,7 @@
 </div>
 <ul>
     <li *ngFor="let pizzaSauce of pizzaSauces">
-        <a>
+        <a (click)="this.selectPizzaSauce(pizzaSauce)">
             <img src="{{pizzaSauce.imageUrl}}" alt="food-images">
             <div class="content">
                 <div class="name">{{pizzaSauce.name}}</div>
@@ -31,13 +31,13 @@
 </div>
 <ul>
     <li>
-        <button class="button" type="button" (click)="extraCheese(true)">
+        <button class="button" type="button" (click)="addExtraCheese(true)">
             <i class="fa fa-plus"></i>
             Yes!!
         </button>
     </li>
     <li>
-        <button class="button" type="button" (click)="extraCheese(false)">
+        <button class="button" type="button" (click)="addExtraCheese(false)">
             <i class="fa fa-plus"></i>
             No!!
         </button>

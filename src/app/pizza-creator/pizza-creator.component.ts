@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PizzaSauce } from '../models/pizzasauce';
 import { PizzaSize } from '../models/pizzasize';
 import { PizzaFoodService } from '../services/pizza-food.service';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-pizza-creator',
@@ -13,7 +14,7 @@ export class PizzaCreatorComponent implements OnInit {
   pizzaSizes: PizzaSize[] = [];
   pizzaSauces: PizzaSauce[] = [];
 
-  constructor(private pizzaService: PizzaFoodService, private router: Router) { }
+  constructor(private pizzaService: PizzaFoodService, private sharedService: SharedService, private router: Router) { }
 
   ngOnInit(): void {
     this.pizzaService.getPizzaSize().subscribe(resp => {
@@ -24,7 +25,19 @@ export class PizzaCreatorComponent implements OnInit {
     });
   }
 
-  extraCheese(isExtraCheeseAdded: boolean): void {
+  selectPizzaSize(pizzaSize: PizzaSize): void {
+    this.sharedService.SelectedPizzaSize = pizzaSize;
+    console.log("in selectPizzaSize()");
+  }
+
+  addExtraCheese(isExtraCheeseAdded: boolean): void {
+    this.sharedService.IsExtraCheeseAdded = isExtraCheeseAdded;
+    console.log("in extraCheese()");
+  }
+
+  selectPizzaSauce(pizzaSauce: PizzaSauce) {
+    this.sharedService.SelectedPizzaSauce = pizzaSauce;
+    console.log("in selectPizzaSauce()");
   }
 
   navigateToPreviousPage(): void {

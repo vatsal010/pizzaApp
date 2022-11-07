@@ -16,3 +16,4 @@ export class MenuItem {
         this.imageUrl = imageurl;
     }
 }
+

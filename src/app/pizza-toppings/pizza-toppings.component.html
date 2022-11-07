@@ -3,7 +3,7 @@
 </div>
 <ul>
     <li *ngFor="let topping of toppings">
-        <a>
+        <a (click)="this.addTopping(topping)">
             <img src="{{topping.imageUrl}}" alt="food-images">
             <div class="content">
                 <div class="name">{{topping.name}}</div>
